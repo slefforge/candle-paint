@@ -1,7 +1,4 @@
-experiment with exporting drawing to another page (submit button) 
-    add multiple canvases to the gallery (stores the most recent 5)
-upload to github
-gallery.js
+get gallery working on psychic habitat
 make background white instead of transparent
 a home button across all pages (other than index)
 make gallery not local
