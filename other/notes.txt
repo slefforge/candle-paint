@@ -1,0 +1,4 @@
+https://flask.palletsprojects.com/en/1.0.x/quickstart/
+sit down at a coffee shop, read this whole thing, look up stuff you don't understand, and take notes
+
+cmd shift R to hard refresh browser

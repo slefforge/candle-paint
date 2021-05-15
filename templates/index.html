@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>candle paint</title>
+	<link rel='icon' type='image/png' href="{{url_for('static', filename='/images/favicon.png')}}"/>
+	<link rel='stylesheet' href="{{url_for('static', filename='/style.css')}}">
+</head>
+<h1>candle paint</h1>
+
+<form action="/drawing/" method="post">
+    <button name="redirectDrawing" type="submit">Drawing Mode</button>
+</form>
+
+<form action="/gallery/" method="post">
+    <button name="redirectGallery" type="submit">Gallery</button>
+</form>
+
+<script type=text/javascript src="{{url_for('static', filename='app.js')}}"></script>
+
+</html>

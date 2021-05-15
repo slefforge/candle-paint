@@ -1,0 +1,12 @@
+experiment with exporting drawing to another page (submit button) 
+    add multiple canvases to the gallery (stores the most recent 5)
+upload to github
+gallery.js
+make background white instead of transparent
+a home button across all pages (other than index)
+make gallery not local
+color picker https://www.w3schools.com/colors/colors_picker.asp
+better fill
+undo
+fix window resizing clearing canvas (in draw mode)
+make figma mock up for gamemode (this is the big one, make sure you're content with the basic layout beforehand)
