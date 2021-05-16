@@ -6,6 +6,7 @@ var canvas = document.getElementById("draw")
 
 var ctx = canvas.getContext("2d")
 resize()
+clearCanvas()
 
 function resize() {
 	ctx.canvas.width = window.innerWidth
@@ -68,7 +69,8 @@ function draw(e) {
 }
 
 function clearCanvas() {
-	ctx.clearRect(ctx.canvas.style.left, ctx.canvas.style.top, ctx.canvas.width, ctx.canvas.height)
+	ctx.fillStyle = "white";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function colorsEqual(data1, data2) {
