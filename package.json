@@ -1,0 +1,25 @@
+{
+  "name": "candle-paint",
+  "version": "1.0.0",
+  "description": "My experimental site focused on digital drawing. Made with Flask.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slefforge/candle-paint.git"
+  },
+  "author": "slefforge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slefforge/candle-paint/issues"
+  },
+  "homepage": "https://github.com/slefforge/candle-paint#readme"
+}
