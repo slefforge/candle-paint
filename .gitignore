@@ -1,7 +1,7 @@
 .vscode/
 node_modules/
 other/
-.eslintrc.js/
+.eslintrc.js
 .gcloudignore/
 .DS_Store
 package-lock.json
