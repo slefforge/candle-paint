@@ -1,8 +1,7 @@
-linter + code cleanup (death to var)
-get gallery working on psychic habitat/make gallery not local
 a home button across all pages (other than index)
 color picker https://www.w3schools.com/colors/colors_picker.asp
 better fill
 undo
 fix window resizing clearing canvas (in draw mode)
+host gallery server side
 make figma mock up for gamemode (this is the big one, make sure you're content with the basic layout beforehand)
