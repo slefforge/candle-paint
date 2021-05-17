@@ -1,4 +1,4 @@
-a home button across all pages (other than index)
+file cleanup
 color picker https://www.w3schools.com/colors/colors_picker.asp
 better fill
 undo
