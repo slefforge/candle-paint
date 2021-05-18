@@ -2,7 +2,7 @@
 node_modules/
 other/
 .eslintrc.js
-.gcloudignore/
+.gcloudignore
 .DS_Store
 package-lock.json
 package.json

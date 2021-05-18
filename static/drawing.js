@@ -135,7 +135,8 @@ function submit() {
   let galleryIndex = localStorage.getItem('galleryIndex');
   const dataURL = canvas.toDataURL('image/png');
   const imgData = dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
-  const imgDataID = 'imgData'.concat(galleryIndex.toString());
+  const imgDataID = 'imgData'.concat(galleryIndex); // concat converts variable to string
+  galleryIndex = parseInt(galleryIndex, 10); // converting back to an int
   localStorage.setItem(imgDataID, imgData);
   clearCanvas();
   galleryIndex += 1;
