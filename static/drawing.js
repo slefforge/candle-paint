@@ -36,13 +36,6 @@ function setPosition(e) {
 function draw(e) {
   if (e.buttons !== 1) return; // if mouse is not clicked, do not go further
   if (tool !== 'pencil' && tool !== 'eraser') return; // if the correct tool isn't selected, do not go further
-
-  if (tool === 'pencil') {
-    if (document.getElementById('hex').value) {
-      color = document.getElementById('hex').value;
-    }
-  }
-
   if (tool === 'pencil' || tool === 'eraser') {
     ctx.beginPath(); // begin the drawing path
     ctx.lineWidth = document.getElementById('brushSlider').value; // width of line
@@ -68,8 +61,6 @@ function colorsEqual(data1, data2) {
 }
 
 function floodFill(x, y, originalColor) {
-  // defining the color to be filled
-  color = document.getElementById('hex').value;
   const imageData = ctx.createImageData(1, 1);
   const data = imageData.data;
   data[0] = parseInt(color.substring(1, 3), 16);
@@ -123,9 +114,14 @@ function clearCanvas() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-function select(toolSelection) {
+function selectTool(toolSelection) {
   tool = toolSelection;
   document.getElementById('currentTool').innerHTML = 'current tool: ' + tool;
+}
+
+function selectColor(colorSelection) {
+  color = colorSelection;
+  document.getElementById('currentColor').innerHTML = 'current color: ' + color;
 }
 
 function submit() {

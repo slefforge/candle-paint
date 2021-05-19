@@ -12,16 +12,36 @@
 </form>
 
 <!-- toolbar -->
-<div id='toolbar'>
+<div class='toolbar'>
 	<h3 id='currentTool'><span>current tool: </span>pencil</h3>
-	<input id='hex' placeholder='color selector'></input>
 	<input type='range' min='1' max='100' value='20' class='slider' id='brushSlider'>
 	<span>Brush Size: <span id='brushSizeDisplay'></span></span>
 	<button onclick='clearCanvas()'>clear canvas</button>
-	<button onclick="select('pencil')">pencil</button>
-	<button onclick="select('eraser')">eraser</button>
-	<button onclick="select('fill')">fill</button>
-	<button onclick="select('quickFill')">efficient fill</button>
+	<button onclick="selectTool('pencil')">pencil</button>
+	<button onclick="selectTool('eraser')">eraser</button>
+	<button onclick="selectTool('fill')">fill</button>
+	<button onclick="selectTool('quickFill')">efficient fill</button>
+</div>
+
+<!-- color picker-->
+<div class='toolbar'>
+	<h3 id='currentColor'><span>current color: </span>black</h3>
+	<span class='color' id="black" onclick="selectColor('black')"></span>
+	<span class='color' id="white" onclick="selectColor('white')"></span>
+	<span class='color' id="red" onclick="selectColor('red')"></span>
+	<span class='color' id="orange" onclick="selectColor('orange')"></span>
+	<span class='color' id="yellow" onclick="selectColor('yellow')"></span>
+	<span class='color' id="green" onclick="selectColor('green')"></span>
+	<span class='color' id="blue" onclick="selectColor('blue')"></span>
+	<span class='color' id="purple" onclick="selectColor('purple')"></span>
+	<span class='color' id="wheat" onclick="selectColor('wheat')"></span>
+	<span class='color' id="tan" onclick="selectColor('tan')"></span>
+	<span class='color' id="peru" onclick="selectColor('peru')"></span>
+	<span class='color' id="saddlebrown" onclick="selectColor('saddlebrown')"></span>
+	<span class='color' id="tomato" onclick="selectColor('tomato')"></span>
+	<span class='color' id="seagreen" onclick="selectColor('seagreen')"></span>
+	<span class='color' id="skyblue" onclick="selectColor('skyblue')"></span>
+	<span class='color' id="plum" onclick="selectColor('plum')"></span>
 </div>
 
 <canvas id='draw'></canvas>

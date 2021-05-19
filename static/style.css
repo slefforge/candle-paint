@@ -14,13 +14,89 @@ h1 {
   left: 10px;
 }
 
-#toolbar {
+.toolbar {
   text-align: center;
   border: 2px solid black; 
   background-color: lightcoral;
   width: 30%;
   display: block;
   margin:0 auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.color::after {
+  content: "";
+  clear: both;
+  display: inline-table;
+  width: 10%;
+  padding-top: 10%;
+  border: 1px solid black;
+  margin-bottom: 5%;
+}
+
+#black::after {
+  background-color: black;
+}
+
+#white::after {
+  background-color: white;
+}
+
+#red::after {
+  background-color: red;
+}
+
+#orange::after {
+  background-color: orange;
+}
+
+#yellow::after {
+  background-color: yellow;
+}
+
+#green::after {
+  background-color: green;
+}
+
+#blue::after {
+  background-color: blue;
+}
+
+#purple::after {
+  background-color: purple;
+}
+
+#wheat::after {
+  background-color: wheat;
+}
+
+#tan::after {
+  background-color: tan;
+}
+
+#peru::after {
+  background-color: peru;
+}
+
+#saddlebrown::after {
+  background-color: saddlebrown;
+}
+
+#tomato::after {
+  background-color: tomato;
+}
+
+#seagreen::after {
+  background-color: seagreen;
+}
+
+#skyblue::after {
+  background-color: skyblue;
+}
+
+#plum::after {
+  background-color: plum;
 }
 
 canvas { 
@@ -29,6 +105,8 @@ canvas {
   width: 70%;
   display: block;
   margin:0 auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 #submit {
