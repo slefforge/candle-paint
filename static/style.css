@@ -9,20 +9,29 @@ h1 {
 }
 
 #homebutton {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
 }
 
-.toolbar {
-  text-align: center;
+.bar {
+  position: fixed;
   border: 2px solid black; 
   background-color: lightcoral;
+  display: inline-table;
   width: 30%;
-  display: block;
-  margin:0 auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  text-align: center;
+}
+
+#toolbar {
+  top: 80%;
+  left: 15%;
+
+}
+
+#colorbar {
+  top: 80%;
+  left: 54.6%;
 }
 
 .color::after {
@@ -32,7 +41,7 @@ h1 {
   width: 10%;
   padding-top: 10%;
   border: 1px solid black;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 
 #black::after {
