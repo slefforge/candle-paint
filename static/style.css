@@ -42,6 +42,8 @@ h1 {
   padding-top: 10%;
   border: 1px solid black;
   margin-bottom: 2%;
+  margin-left: .5%;
+  margin-right: .5%;
 }
 
 #black::after {
@@ -109,7 +111,7 @@ h1 {
 }
 
 canvas { 
-  border: 5px solid black; 
+  /* border: 5px solid black; For some reason this causes the mouse position to be slightly inaccurate, especially near the edges */
   background-color: white;
   width: 70%;
   display: block;
