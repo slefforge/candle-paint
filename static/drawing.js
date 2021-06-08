@@ -14,6 +14,9 @@ const slider = document.getElementById('brushSlider');
 const output = document.getElementById('brushSizeDisplay');
 output.innerHTML = slider.value;
 
+// for undo/redo functionality
+const canvasHistory = [];
+
 slider.oninput = function updateSlider() {
   output.innerHTML = this.value;
 };
@@ -140,6 +143,9 @@ function quickFill(x, y) { // uses this algorithm: http://www.williammalone.com/
 
 function click(e) {
   setPosition(e);
+  if (pos.x > 0 && pos.x < canvas.width && pos.y > 0 && pos.y < canvas.height) {
+    canvasHistory.push(document.getElementById('draw').toDataURL()); // Store state for undo purposes
+  }
   if (tool === 'quickFill' && pos.x > 0 && pos.x < canvas.width) {
     quickFill(pos.x, pos.y);
   }
@@ -197,6 +203,12 @@ function hexToName(hex) {
 function selectColor(colorSelection) {
   color = colorSelection;
   document.getElementsByClassName('colorsample')[0].setAttribute('id', hexToName(color));
+}
+
+function undo() {
+  const canvasPic = new Image();
+  canvasPic.src = canvasHistory.pop();
+  canvasPic.onload = function drawOldState() { ctx.drawImage(canvasPic, 0, 0); };
 }
 
 function submit() {
