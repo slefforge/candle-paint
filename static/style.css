@@ -46,6 +46,21 @@ h1 {
   margin-right: .5%;
 }
 
+.colorsample::after {
+  content: "";
+  clear: both;
+  display: inline-table;
+  width: 5%;
+  padding-top: 5%;
+  border: 1px solid black;
+  margin: 0;
+  margin-left: 2%;
+  position: absolute;
+  top: 2.5%;
+  -ms-transform: translateY(-2.5%);
+  transform: translateY(-2.5%);
+}
+
 #black::after {
   background-color: black;
 }

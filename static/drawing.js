@@ -40,7 +40,6 @@ function draw(e) {
     ctx.beginPath(); // begin the drawing path
     ctx.lineWidth = document.getElementById('brushSlider').value; // width of line
     ctx.lineCap = 'round'; // rounded end cap
-
     if (tool === 'pencil') {
       ctx.strokeStyle = color; // hex color of line
     }
@@ -156,9 +155,48 @@ function selectTool(toolSelection) {
   document.getElementById('currentTool').innerHTML = 'current tool: ' + tool;
 }
 
+function hexToName(hex) {
+  switch (hex) {
+    case '#000000':
+      return 'black';
+    case '#ffffff':
+      return 'white';
+    case '#ff0000':
+      return 'red';
+    case '#ffa500':
+      return 'orange';
+    case '#ffff00':
+      return 'yellow';
+    case '#008000':
+      return 'green';
+    case '#0000ff':
+      return 'blue';
+    case '#800080':
+      return 'purple';
+    case '#f5deb3':
+      return 'wheat';
+    case '#d2b48c':
+      return 'tan';
+    case '#cd853f':
+      return 'peru';
+    case '#8b4513':
+      return 'saddlebrown';
+    case '#ff6347':
+      return 'tomato';
+    case '#2e8b57':
+      return 'seagreen';
+    case '#87ceeb':
+      return 'skyblue';
+    case '#dda0dd':
+      return 'plum';
+    default:
+      return 'color not found';
+  }
+}
+
 function selectColor(colorSelection) {
   color = colorSelection;
-  document.getElementById('currentColor').innerHTML = 'current color: ' + color;
+  document.getElementsByClassName('colorsample')[0].setAttribute('id', hexToName(color));
 }
 
 function submit() {
