@@ -42,7 +42,6 @@ function draw(e) {
     ctx.lineCap = 'round'; // rounded end cap
 
     if (tool === 'pencil') {
-      console.log(color);
       ctx.strokeStyle = color; // hex color of line
     }
 
@@ -54,47 +53,6 @@ function draw(e) {
     setPosition(e);
     ctx.lineTo(pos.x, pos.y); // to position
     ctx.stroke(); // draw it!
-  }
-}
-
-function colorsEqual(data1, data2) {
-  return (data1[0] === data2[0] && data1[1] === data2[1] && data1[2] === data2[2] && data1[3] === data2[3]);
-}
-
-function floodFill(x, y, originalColor) {
-  const imageData = ctx.createImageData(1, 1);
-  const data = imageData.data;
-  // this is why this breaks now, I'm no longer using the #ff0000 format, instead I would just call that 'red'
-  // not important because I'm redoing all of this
-  data[0] = parseInt(color.substring(1, 3), 16);
-  data[1] = parseInt(color.substring(3, 5), 16);
-  data[2] = parseInt(color.substring(5, 7), 16);
-  data[3] = 255;
-
-  // create stack
-  const stack = [];
-  stack.push([x, y]);
-
-  while (stack.length !== 0) {
-    const coords = stack.pop();
-    ctx.putImageData(imageData, coords[0], coords[1]); // fill pixel
-
-    // check if in bounds
-    if (coords[0] > 0 && coords[0] < ctx.canvas.width && coords[1] > 0 && coords[1] < ctx.canvas.height) {
-      // check to make sure color doesn't match fill color and does match background color
-      if (!colorsEqual(ctx.getImageData(coords[0] - 1, coords[1], 1, 1), data) && colorsEqual(ctx.getImageData(coords[0] - 1, coords[1], 1, 1).data, originalColor)) {
-        stack.push([coords[0] - 1, coords[1]]);
-      }
-      if (!colorsEqual(ctx.getImageData(coords[0] + 1, coords[1], 1, 1), data) && colorsEqual(ctx.getImageData(coords[0] + 1, coords[1], 1, 1).data, originalColor)) {
-        stack.push([coords[0] + 1, coords[1]]);
-      }
-      if (!colorsEqual(ctx.getImageData(coords[0], coords[1] - 1, 1, 1), data) && colorsEqual(ctx.getImageData(coords[0], coords[1] - 1, 1, 1).data, originalColor)) {
-        stack.push([coords[0], coords[1] - 1]);
-      }
-      if (!colorsEqual(ctx.getImageData(coords[0], coords[1] + 1, 1, 1), data) && colorsEqual(ctx.getImageData(coords[0], coords[1] + 1, 1, 1).data, originalColor)) {
-        stack.push([coords[0], coords[1] + 1]);
-      }
-    }
   }
 }
 
@@ -129,6 +87,11 @@ function quickFill(x, y) { // uses this algorithm: http://www.williammalone.com/
   const startB = imgData.data[pixelPos + 2];
   let reachLeft;
   let reachRight;
+
+  // If the selected color matches the color of the selected pixel, do nothing
+  if (startR === parseInt(color.substring(1, 3), 16) && startG === parseInt(color.substring(3, 5), 16) && startB === parseInt(color.substring(5, 7), 16)) {
+    return;
+  }
 
   while (pixelStack.length) {
     newPos = pixelStack.pop();
@@ -178,10 +141,7 @@ function quickFill(x, y) { // uses this algorithm: http://www.williammalone.com/
 
 function click(e) {
   setPosition(e);
-  if (tool === 'fill') {
-    floodFill(pos.x, pos.y, ctx.getImageData(pos.x, pos.y, 1, 1).data);
-  }
-  if (tool === 'quickFill') {
+  if (tool === 'quickFill' && pos.x > 0 && pos.x < canvas.width) {
     quickFill(pos.x, pos.y);
   }
 }
