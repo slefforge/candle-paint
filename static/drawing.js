@@ -22,8 +22,24 @@ slider.oninput = function updateSlider() {
 };
 
 function resize() {
-  ctx.canvas.width = window.innerWidth;
-  ctx.canvas.height = window.innerHeight;
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  // create a temporary canvas obj to cache the pixel data
+  const tempCnvs = document.createElement('canvas');
+  const tempCntx = tempCnvs.getContext('2d');
+
+  // set it to the new width & height and draw the current canvas data into it
+  tempCnvs.width = w;
+  tempCnvs.height = h;
+  tempCntx.fillStyle = '#ffffff'; // the original canvas's background color
+  tempCntx.fillRect(0, 0, w, h);
+  tempCntx.drawImage(ctx.canvas, 0, 0);
+
+  // resize & clear the original canvas and copy back in the cached pixel data
+  ctx.canvas.width = w;
+  ctx.canvas.height = h;
+  ctx.drawImage(tempCnvs, 0, 0);
 }
 
 // new position from mouse events
