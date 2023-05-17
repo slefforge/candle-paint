@@ -24,7 +24,7 @@ def drawing():
 def gallery():
     return render_template('gallery.html')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload/', methods=['POST'])
 def upload_image():
     data = request.get_json()
     base64_image = data['image']

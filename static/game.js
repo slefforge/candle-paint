@@ -276,7 +276,7 @@ function submit() {
 // host image
   const dataURL = canvas.toDataURL('image/png');
   const imgData = dataURL.replace(/^data:image\/(png|jpg);base64,/, ''); // base 64 representation of the image
-  fetch('/upload', {
+  fetch('/upload/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -285,7 +285,8 @@ function submit() {
   })
         .then(response => response.text()) // Parse response as text
         .then(data => {
-            console.log('Image uploaded successfully at http://127.0.0.1:8080/images/imageUploads/'+data+'.png');
+            console.log('Local: Image uploaded successfully at http://127.0.0.1:8080/images/imageUploads/'+data+'.png');
+            console.log('Online: Image uploaded successfully at https://psychic-habitat-312522.uc.r.appspot.com/images/imageUploads/'+data+'.png');
         })
         .catch(error => {
             console.error('Error:', error);
