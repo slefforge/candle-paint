@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>candle paint</title>
+	<link rel='icon' type='image/png' href="{{url_for('static', filename='/images/favicon.png')}}"/>
+	<link rel='stylesheet' href="{{url_for('static', filename='/style.css')}}">
+</head>
+<h1>candle paint</h1>
+<h2 class="inline-heading">theme: <span id="themeContainer"></span></h2>
+
+
+
+<!-- home button -->
+<form id="homebutton" action="/" method="post">
+	<input type="image" src="{{url_for('static', filename='/images/homeicon.png')}}"/>
+</form>
+
+<!-- toolbar -->
+<span class='bar' id='toolbar'>
+	<h3 id='currentTool'><span>current tool: </span>pencil</h3>
+	<input type='range' min='1' max='100' value='20' class='slider' id='brushSlider'>
+	<span>Brush Size: <span id='brushSizeDisplay'></span></span>
+	<button onclick='clearCanvas()'>clear canvas</button>
+	<button onclick="selectTool('pencil')">pencil</button>
+	<button onclick="selectTool('eraser')">eraser</button>
+	<button onclick="selectTool('quickFill')">fill</button>
+	<button onclick="undo()">undo</button>
+</span>
+
+<!-- color picker-->
+<span class='bar' id='colorbar'>
+	<h3 id='currentColor'><span>current color: </span><span class='colorsample' id="black"></span></h3> 
+	<span class='color' id="black" onclick="selectColor('#000000')"></span>
+	<span class='color' id="white" onclick="selectColor('#ffffff')"></span>
+	<span class='color' id="red" onclick="selectColor('#ff0000')"></span>
+	<span class='color' id="orange" onclick="selectColor('#ffa500')"></span>
+	<span class='color' id="yellow" onclick="selectColor('#ffff00')"></span>
+	<span class='color' id="green" onclick="selectColor('#008000')"></span>
+	<span class='color' id="blue" onclick="selectColor('#0000ff')"></span>
+	<span class='color' id="purple" onclick="selectColor('#800080')"></span>
+	<span class='color' id="wheat" onclick="selectColor('#f5deb3')"></span>
+	<span class='color' id="tan" onclick="selectColor('#d2b48c')"></span>
+	<span class='color' id="peru" onclick="selectColor('#cd853f')"></span>
+	<span class='color' id="saddlebrown" onclick="selectColor('#8b4513')"></span>
+	<span class='color' id="tomato" onclick="selectColor('#ff6347')"></span>
+	<span class='color' id="seagreen" onclick="selectColor('#2e8b57')"></span>
+	<span class='color' id="skyblue" onclick="selectColor('#87ceeb')"></span>
+	<span class='color' id="plum" onclick="selectColor('#dda0dd')"></span>
+</span>
+
+<canvas id='draw'></canvas>
+
+<button id ='submit' onclick="submit()">submit</button>
+
+
+<script type=text/javascript src="{{url_for('static', filename='game.js')}}"></script>
+
+</html>

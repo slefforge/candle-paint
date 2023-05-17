@@ -8,6 +8,22 @@ h1 {
   text-align: center;
 }
 
+h2 {
+	color: black;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+
+  .inline-heading {
+    white-space: nowrap;
+  }
+
+  #themeContainer {
+    display: inline; /* or inline-block */
+  }
+
+
 #homebutton {
   position: fixed;
   top: 10px;
@@ -129,6 +145,7 @@ canvas {
   /* border: 5px solid black; For some reason this causes the mouse position to be slightly inaccurate, especially near the edges */
   background-color: white;
   width: 70%;
+  height: 65%;
   display: block;
   margin:0 auto;
   margin-top: 1%;
