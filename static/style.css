@@ -15,13 +15,13 @@ h2 {
 }
 
 
-  .inline-heading {
-    white-space: nowrap;
-  }
+.inline-heading {
+  white-space: nowrap;
+}
 
-  #themeContainer {
-    display: inline; /* or inline-block */
-  }
+#themeContainer {
+  display: inline; /* or inline-block */
+}
 
 
 #homebutton {
