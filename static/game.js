@@ -276,7 +276,7 @@ function submit() {
 // host image
   const dataURL = canvas.toDataURL('image/png');
   const imgData = dataURL.replace(/^data:image\/(png|jpg);base64,/, ''); // base 64 representation of the image
-  fetch('/upload/', {
+  fetch('/upload', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
